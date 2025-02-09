@@ -1,13 +1,20 @@
 package com.cabdriver.Cab.Driver.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
+//import lombok.*;
+//
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Getter
+//@Setter
+//@ToString
 
 @Entity
 public class Booking {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @ManyToOne
     Customer customer;
