@@ -12,6 +12,11 @@ public class CustomerService {
 
     @Autowired
     CustomerRepository customerRepository;
+
+    public Customer getCustomerById(int customerId)
+    {
+        return customerRepository.findById(customerId).orElse(null);
+    }
     public void registerAccount(Customer customer)
     {
         customerRepository.save(customer);
