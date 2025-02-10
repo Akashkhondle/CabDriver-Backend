@@ -2,13 +2,13 @@ package com.cabdriver.Cab.Driver.models;
 
 import jakarta.persistence.*;
 
-//import lombok.*;
-//
+import lombok.*;
+
 //@NoArgsConstructor
 //@AllArgsConstructor
 //@Getter
 //@Setter
-//@ToString
+@ToString
 
 @Entity
 public class Booking {
@@ -25,16 +25,23 @@ public class Booking {
     @ManyToOne
     Driver driver;
 
+   private String startingLocation;
+
+   private  String endingLocation;
+
     public Booking() {
     }
 
-    public Booking(int id, Customer customer, int billAmount, String status, String feedback, Driver driver) {
+    public Booking(int id, Customer customer, int billAmount, String status, String feedback, Driver driver, String startingLocation, String endingLocation) {
         this.id = id;
         this.customer = customer;
         this.billAmount = billAmount;
         this.status = status;
         this.feedback = feedback;
         this.driver = driver;
+        this.startingLocation = startingLocation;
+        this.endingLocation=endingLocation;
+
     }
 
     public int getId() {
@@ -83,5 +90,21 @@ public class Booking {
 
     public void setDriver(Driver driver) {
         this.driver = driver;
+    }
+
+    public String getStartingLocation() {
+        return startingLocation;
+    }
+
+    public void setStartingLocation(String startingLocation) {
+        this.startingLocation = startingLocation;
+    }
+
+    public String getEndingLocation() {
+        return endingLocation;
+    }
+
+    public void setEndingLocation(String endingLocation) {
+        this.endingLocation = endingLocation;
     }
 }
