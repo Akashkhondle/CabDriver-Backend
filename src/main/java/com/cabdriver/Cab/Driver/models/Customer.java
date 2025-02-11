@@ -13,7 +13,7 @@ import java.util.*;
 // @ToString
 
 @Entity
-public class Customer {
+public class Customer implements User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
